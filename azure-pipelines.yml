@@ -21,10 +21,8 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: '**/dockerfile'
-        tags: |
-          $(tag)
+        containerRegistry: 'django ci cd 3'
+        repository: 'djangocicd2'
+        command: 'buildAndPush'
+        Dockerfile: '**/dockerfile'
