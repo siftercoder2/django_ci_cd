@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'django ci cd 3'
+        containerRegistry: 'ojassiftertf'
         repository: 'djangocicd2'
         command: 'buildAndPush'
         Dockerfile: '**/dockerfile'
