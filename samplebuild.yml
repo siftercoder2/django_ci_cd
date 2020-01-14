@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'acr-service-principal'
+        containerRegistry: 'sifter aaa'
         repository: 'djangocicd2'
         command: 'buildAndPush'
         Dockerfile: '**/dockerfile'
