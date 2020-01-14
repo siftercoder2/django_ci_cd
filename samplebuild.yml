@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'changethisinbuild'
+        containerRegistry: 'changethisinbuild2'
         repository: 'djangocicd2'
         command: 'buildAndPush'
         Dockerfile: '**/dockerfile'
