@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'acrserviceconnection'
+        containerRegistry: 'acrserviceconnection2'
         repository: 'djangocicd2'
         command: 'buildAndPush'
         Dockerfile: '**/dockerfile'
