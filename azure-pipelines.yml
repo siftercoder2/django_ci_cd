@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'djangocicd2'
-        repository: 'armcontainertestsifter'
+        containerRegistry: 'armcontainertestsifter'
+        repository: 'djangocicd2'
         command: 'buildAndPush'
         Dockerfile: '**/dockerfile'
