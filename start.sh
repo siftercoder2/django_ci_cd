@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Start Gunicorn processes
-python /usr/src/app/manage.py runserver
+python /my-django-app/manage.py runserver
 
 # Add comments
