@@ -16,9 +16,10 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.7.9
+        image: djangocicd2.azurecr.io/djangocicd2:#{Build.BuildId}#
+        :52
         ports:
-        - containerPort: 80
+        - containerPort: 8000
 ---
 apiVersion: v1
 kind: Service
@@ -30,4 +31,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80        
+      targetPort: 8000        
