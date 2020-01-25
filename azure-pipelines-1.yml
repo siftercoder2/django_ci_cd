@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: 'b818fd4c-4385-4fef-b2fe-642e44503204'
   imageRepository: 'djangocicd2'
   containerRegistry: 'djangocicd2.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '**/dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'djangocicd27dd6-auth'
 
