@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: djangocicd2.azurecr.io/djangocicd2:#{Build.BuildId}#
+        image: armcontainertestsifter.azurecr.io/djangocicd2:#{Build.BuildId}#
         ports:
         - containerPort: 8000
 ---
