@@ -53,6 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
+    environment: 'iojasdjangocicd.default'  
     strategy:
       runOnce:
         deploy:
