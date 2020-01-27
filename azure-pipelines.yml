@@ -1,6 +1,7 @@
 # Deploy to Azure Kubernetes Service
 # Build and push image to Azure Container Registry; Deploy to Azure Kubernetes Service
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
 trigger:
 - master
 
@@ -11,11 +12,11 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'acrserviceconnection'
-  imageRepository: 'djangocicd2'
+  imageRepository: 'iojasdjangocicd'
   containerRegistry: 'armcontainertestsifter.azurecr.io'
   dockerfilePath: 'dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'armcontainertestsiftera1e0-auth'
+  imagePullSecret: 'armcontainertestsifter19651cad-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -52,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'iojasdjangocicd.default'  
+    environment: 'iojasdjangocicd-1763.default'
     strategy:
       runOnce:
         deploy:
@@ -75,4 +76,3 @@ stages:
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
-
