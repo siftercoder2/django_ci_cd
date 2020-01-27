@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '0088d2c7-14b1-42b2-adcd-f30ba0dd90d6'
   imageRepository: 'djangocicd2'
   containerRegistry: 'armcontainertestsifter.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: 'dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'armcontainertestsiftera1e0-auth'
 
