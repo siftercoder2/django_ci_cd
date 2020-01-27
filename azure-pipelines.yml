@@ -13,9 +13,9 @@ variables:
   dockerRegistryServiceConnection: 'acrserviceconnection'
   imageRepository: 'djangocicd2'
   containerRegistry: 'armcontainertestsifter.azurecr.io'
-  dockerfilePath: '**/dockerfile'
+  dockerfilePath: 'dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'djangocicd27dd6-auth'
+  imagePullSecret: 'armcontainertestsiftera1e0-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
