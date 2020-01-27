@@ -10,7 +10,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'iojasdjangocicd-aks-cluster1-default-1580130353176'
+  dockerRegistryServiceConnection: 'acrserviceconnection'
   imageRepository: 'djangocicd2'
   containerRegistry: 'djangocicd2.azurecr.io'
   dockerfilePath: '**/dockerfile'
