@@ -12,7 +12,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'acrserviceconnection'
   imageRepository: 'djangocicd2'
-  containerRegistry: 'djangocicd2.azurecr.io'
+  containerRegistry: 'armcontainertestsifter.azurecr.io'
   dockerfilePath: '**/dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'djangocicd27dd6-auth'
