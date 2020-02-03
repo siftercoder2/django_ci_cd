@@ -11,12 +11,12 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'acrserviceconnection'
+  dockerRegistryServiceConnection: '7412f046-7cb6-4af5-9fd3-375122007e8a'
   imageRepository: 'iojasdjangocicd'
   containerRegistry: 'armcontainertestsifter.azurecr.io'
   dockerfilePath: 'dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'armcontainertestsifter19651cad-auth'
+  imagePullSecret: 'armcontainertestsifter7edf-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -53,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'iojasdjangocicd-1763'
+    environment: 'iojasdjangocicd.default'
     strategy:
       runOnce:
         deploy:
@@ -76,3 +76,4 @@ stages:
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
+
