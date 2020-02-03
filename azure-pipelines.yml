@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '7412f046-7cb6-4af5-9fd3-375122007e8a'
+  dockerRegistryServiceConnection: 'acrserviceconnection'
   imageRepository: 'iojasdjangocicd'
   containerRegistry: 'armcontainertestsifter.azurecr.io'
   dockerfilePath: 'dockerfile'
