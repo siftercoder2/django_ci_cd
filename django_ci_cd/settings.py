@@ -109,6 +109,29 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGGING = {
+# Put here formatters, etc...
+    'version': 1,
+    'handlers': {
+        'logstash': {
+            'level': 'ERROR',
+            'class': 'logstash.TCPLogstashHandler',
+            'host': 'sample-logstash',
+            'port': 5959, # Default value: 5959
+            'version': 1, # Version of logstash event schema. Default value: 0 (for backward compatibility of the library)
+            'message_type': 'django',  # 'type' field in logstash message. Default value: 'logstash'.
+            'fqdn': False, # Fully qualified domain name. Default value: false.
+            'tags': ['django.request'], # list of tags. Default: None.
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['logstash'],
+            'level': 'ERROR',
+            'propagate': True,
+        }
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
