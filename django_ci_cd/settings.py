@@ -109,71 +109,71 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGGING = {
-# Put here formatters, etc...
-    'version': 1,
-    'handlers': {
-        'logstash': {
-            'level': 'DEBUG',
-            'class': 'logstash.TCPLogstashHandler',
-            'host': 'localhost',
-            'port': 5959, # Default value: 5959
-            'version': 1, # Version of logstash event schema. Default value: 0 (for backward compatibility of the library)
-            'message_type': 'django',  # 'type' field in logstash message. Default value: 'logstash'.
-            'fqdn': False, # Fully qualified domain name. Default value: false.
-            'tags': ['django.request'], # list of tags. Default: None.
-        },
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['logstash'],
-            'level': 'DEBUG',
-            'propagate': True,
-        }
-    }
-}
-
-# LOGGING ={
-#     'version':1,
-#     'disable_existing_loggers':False,
-#     'formatters':{
-#         'simple':{
-#             'format':'velname)s %(message)s'
+# LOGGING = {
+# # Put here formatters, etc...
+#     'version': 1,
+#     'handlers': {
+#         'logstash': {
+#             'level': 'DEBUG',
+#             'class': 'logstash.TCPLogstashHandler',
+#             'host': 'localhost',
+#             'port': 5959, # Default value: 5959
+#             'version': 1, # Version of logstash event schema. Default value: 0 (for backward compatibility of the library)
+#             'message_type': 'django',  # 'type' field in logstash message. Default value: 'logstash'.
+#             'fqdn': False, # Fully qualified domain name. Default value: false.
+#             'tags': ['django.request'], # list of tags. Default: None.
 #         },
-
 #     },
-#     'handlers':{
-#         'console':{
-#             'level':'DEBUG',
-#             'class':'logging.StreamHandler',
-#             'formatter':'simple'
-#         },
-#         'logstash':{
-#             'level':'DEBUG',
-#             'class':'logstash.TCPLogstashHandler',
-#             'host':'logstash',
-#             'port':5000,
-#             'version':1,
-#             'message_type':'django',
-#             #            'type'            logstash .            'fqdn':False,
-#             'tags':[
-#                 'django'
-#             ],
-#             #  .
-#         },
-
-#     },
-#     'loggers':{
-#         'django.request':{
-#             'handlers':[
-#                 'logstash'
-#             ],
-#             'level':'INFO',
-#             'propagate':True,
-
-#         },
+#     'loggers': {
+#         'django.request': {
+#             'handlers': ['logstash'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         }
 #     }
 # }
+
+LOGGING ={
+    'version':1,
+    'disable_existing_loggers':False,
+    'formatters':{
+        'simple':{
+            'format':'velname)s %(message)s'
+        },
+
+    },
+    'handlers':{
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter':'simple'
+        },
+        'logstash':{
+            'level':'DEBUG',
+            'class':'logstash.TCPLogstashHandler',
+            'host':'logstash',
+            'port':5000,
+            'version':1,
+            'message_type':'django',
+            #            'type'            logstash .            'fqdn':False,
+            'tags':[
+                'django'
+            ],
+            #  .
+        },
+
+    },
+    'loggers':{
+        'django.request':{
+            'handlers':[
+                'logstash'
+            ],
+            'level':'DEBUG',
+            'propagate':True,
+
+        },
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
